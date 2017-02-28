@@ -1,0 +1,17 @@
+{
+  "nodes": {
+    "puppetmaster.lab.com": {
+      ":ip": "10.0.1.10",
+      "ports": [],
+      ":memory": 1024,
+      ":bootstrap": "bootstrap-master.sh"
+    },
+    "puppetagent.lab.com": {
+      ":ip": "10.0.1.11",
+      "ports": [],
+      ":memory": 1024,
+      ":bootstrap": "bootstrap-node.sh"
+    }
+    }
+}
+
