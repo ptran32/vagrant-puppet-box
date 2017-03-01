@@ -24,8 +24,8 @@ else
     # Configure /etc/hosts file
     echo "" | sudo tee --append /etc/hosts 2> /dev/null && \
     echo "# Host config for Puppet Master and Puppet Agent Nodes" | sudo tee --append /etc/hosts 2> /dev/null && \
-    echo "10.0.1.10    puppetmaster.lab.com  puppetmaster" | sudo tee --append /etc/hosts 2> /dev/null && \
-    echo "10.0.1.20   puppetagent.lab.com  puppetagent" | sudo tee --append /etc/hosts 2> /dev/null && \
+    echo "10.0.1.10    puppetmaster" | sudo tee --append /etc/hosts 2> /dev/null && \
+    echo "10.0.1.20   puppetagent" | sudo tee --append /etc/hosts 2> /dev/null && \
  
     # Add agent section to /etc/puppet/puppet.conf
     echo "" && echo "[agent]\nserver=puppetmaster" | sudo tee --append /etc/puppet/puppet.conf 2> /dev/null
