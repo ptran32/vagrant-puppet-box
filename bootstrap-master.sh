@@ -15,8 +15,8 @@ else
     # Configure /etc/hosts file
     echo "" | sudo tee --append /etc/hosts 2> /dev/null && \
     echo "# Host config for Puppet Master and Agent Nodes" | sudo tee --append /etc/hosts 2> /dev/null && \
-    echo "10.0.1.10    puppetmaster" | sudo tee --append /etc/hosts 2> /dev/null && \
-    echo "10.0.1.11   puppetagent" | sudo tee --append /etc/hosts 2> /dev/null && \
+    echo "10.0.1.110    puppetmaster.lab.com" | sudo tee --append /etc/hosts 2> /dev/null && \
+    echo "10.0.1.111   puppetagent.lab.com" | sudo tee --append /etc/hosts 2> /dev/null && \
  
     # Add optional alternate DNS names to /etc/puppet/puppet.conf
     sudo sed -i 's/.*\[main\].*/&\ndns_alt_names = puppet,puppetmaster.lab.com/' /etc/puppet/puppet.conf

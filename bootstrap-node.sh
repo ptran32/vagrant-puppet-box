@@ -24,11 +24,11 @@ else
     # Configure /etc/hosts file
     echo "" | sudo tee --append /etc/hosts 2> /dev/null && \
     echo "# Host config for Puppet Master and Puppet Agent Nodes" | sudo tee --append /etc/hosts 2> /dev/null && \
-    echo "10.0.1.10    puppetmaster" | sudo tee --append /etc/hosts 2> /dev/null && \
-    echo "10.0.1.20   puppetagent" | sudo tee --append /etc/hosts 2> /dev/null && \
+    echo "10.0.1.110    puppetmaster.lab.com" | sudo tee --append /etc/hosts 2> /dev/null && \
+    echo "10.0.1.111   puppetagent.lab.com" | sudo tee --append /etc/hosts 2> /dev/null && \
  
     # Add agent section to /etc/puppet/puppet.conf
-    echo "" && echo "[agent]\nserver=puppetmaster" | sudo tee --append /etc/puppet/puppet.conf 2> /dev/null
+    echo "" && echo "[agent]\nserver=puppetmaster.lab.com" | sudo tee --append /etc/puppet/puppet.conf 2> /dev/null
  
    # Change startup option for agent
     sudo sed -i 's/no/yes/g' /etc/default/puppet 
