@@ -33,4 +33,21 @@ else
  
     # symlink manifest from Vagrant synced folder location
     ln -s /vagrant/site.pp /etc/puppet/manifests/site.pp
+
+    # Install Foreman
+    apt-get -y install ca-certificates
+    wget https://apt.puppetlabs.com/puppetlabs-release-wheezy.deb
+    dpkg -i puppetlabs-release-wheezy.deb
+
+    echo "deb http://deb.theforeman.org/ wheezy 1.9" > /etc/apt/sources.list.d/foreman.list
+    echo "deb http://deb.theforeman.org/ plugins 1.9" >> /etc/apt/sources.list.d/foreman.list
+    wget -q http://deb.theforeman.org/pubkey.gpg -O- | apt-key add -
+
+    
+    # Update sources and install foreman
+    apt-get update && apt-get -y install foreman-installer
+
+    # Running the installer
+    foreman-installer
+
 fi
